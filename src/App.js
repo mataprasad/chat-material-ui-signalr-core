@@ -211,6 +211,7 @@ export default function App() {
         })} >
         <Toolbar>
           <IconButton left
+            disableRipple={true}
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
@@ -337,12 +338,12 @@ export default function App() {
           {item.name}
         </TabPanel>
       })}
-      <form className={clsx(classes.content, classes.messageFormContainer, {
+      <form className={clsx(classes.content, classes.messageFormContainer, "send-form", {
         [classes.contentShift]: open,
       })} noValidate autoComplete="off">
         <div className={classes.messageForm}>
           <input
-            className={clsx(classes.textInput, {
+            className={clsx(classes.textInput, "textInput_input", {
               [classes.textInputShift]: open,
             })}
             type="text" />
@@ -351,9 +352,7 @@ export default function App() {
             color="primary"
             className={classes.button}
             endIcon={<Icon>send</Icon>}
-          >
-            Send
-      </Button>
+          />
         </div>
       </form>
     </div>
